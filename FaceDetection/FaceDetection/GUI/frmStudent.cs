@@ -14,11 +14,12 @@ using FaceDetection.Constant;
 using FaceDetection.Entity;
 using System.IO;
 using System.Globalization;
-
+using Emgu.CV.UI;
 namespace FaceDetection.GUI
 {
     public partial class frmStudent : Form
     {
+        
         private Capture capture;         // camera input
         private bool captureInProcess = false;
         private bool picProcess = false;
@@ -43,8 +44,8 @@ namespace FaceDetection.GUI
         {
             this.txtStudentCode.Text = student.StudentCode;
             this.txtName.Text = student.Name;
-            this.txtClass.Text = student.ClassCode;
-            this.txtDoB.Text = student.DOB.ToString("dd/MM/yyyy");
+            this.txtDoB.Text = student.ClassCode;
+            this.txtClassCode.Text = student.DOB.ToString("dd/MM/yyyy");
             if (student.Gender.Equals("Nam") == true)
             {
                 radBoy.Checked = true;
@@ -63,7 +64,7 @@ namespace FaceDetection.GUI
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            btnChup.Enabled = true;
+            btnCapture.Enabled = true;
             picProcess = false;
             captureInProcess = false;
             if (capture != null)
@@ -104,9 +105,9 @@ namespace FaceDetection.GUI
                 if (faces.Length != 0)
                 {
 
-                    btnChup.Enabled = true;
+                    btnCapture.Enabled = true;
                     if (captureInProcess == true)
-                        btnChup.Enabled = false;
+                        btnCapture.Enabled = false;
                     //  if(face.rect!=null)
                     if ((captureInProcess == false))
                     {
@@ -124,7 +125,7 @@ namespace FaceDetection.GUI
                     if (captureInProcess == false)
                     {
                         imgTrain.Image = null;
-                        btnChup.Enabled = false;
+                        btnCapture.Enabled = false;
                     }
                 }
             }
@@ -134,7 +135,7 @@ namespace FaceDetection.GUI
         public void DetectFaces_pic()
         {
             picProcess = true;
-            btnChup.Enabled = false;
+            btnCapture.Enabled = false;
             if (ImageFrame != null)
             {
                 Image<Gray, Byte> grayFrame = ImageFrame.Convert<Gray, Byte>();
@@ -339,10 +340,10 @@ namespace FaceDetection.GUI
 
 
             //Kiểm tra ngày sinh    
-            if (txtDoB.Text.Trim().Length == 0)
+            if (txtClassCode.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn chưa nhập ngày sinh.", "Thông báo");
-                ActiveControl = txtDoB;
+                ActiveControl = txtClassCode;
                 return;
             }
             try
@@ -353,7 +354,7 @@ namespace FaceDetection.GUI
             catch (Exception ex)
             {
                 MessageBox.Show("Định dạng ngày không đúng.", "Thông báo");
-                ActiveControl = txtDoB;
+                ActiveControl = txtClassCode;
             }
             //Kiểm tra giới tính
             if (radBoy.Checked == false && radGirl.Checked == false)
@@ -368,6 +369,23 @@ namespace FaceDetection.GUI
             DateTime date;
             date = Convert.ToDateTime(txtDoB.Text, new CultureInfo("vi-VN"));
             return Convert.ToDateTime(date.Date, new CultureInfo("en-US")).Date;
+        }
+        public Student getStudent()
+        {
+            Student student = new Student();
+            student.StudentCode = txtStudentCode.Text.Trim();
+            student.Name = txtName.Text.Trim();
+            student.Image = new Image<Bgr, Byte>(imgTrain.Image.Bitmap);
+            student.DOB = getDate();
+            student.Gender= radBoy.Checked == true ? "Nam" : "Nữ";
+            return student;
+        }
+
+        private void btnCapture_Click(object sender, EventArgs e)
+        {
+            captureInProcess = true;
+            txtStudentCode.Focus();
+            btnCapture.Enabled = false;
         }
     }
 }

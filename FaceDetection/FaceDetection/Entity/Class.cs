@@ -13,7 +13,9 @@ namespace FaceDetection.Entity
         private String classTypeCode;
         public Class()
         {
-
+            this.classCode = "";
+            this.className = "";
+            this.classTypeCode = "";
         } 
         public Class(String classCode, String className, String classTypeCode)
         {
@@ -21,9 +23,25 @@ namespace FaceDetection.Entity
             this.className = className;
             this.classTypeCode = classTypeCode;
         }
-        public String ClassCode { get; set; }
-        public String ClassName { get; set; }
-        public String ClassTypeCode { get; set; }
+        public String ClassCode
+        {
+            get { return this.classCode; }
+            set { this.classCode = value; }
+        }
+        public String ClassName
+        {
+            get { return this.className; }
+            set { this.className = value; }
+        }
+        public String ClassTypeCode
+        {
+            get { return this.classTypeCode; }
+            set { this.classTypeCode = value; }
+        }
+        public String toString()
+        {
+            return classCode + " " + className + " " + classTypeCode;
+        }
 
     }
 }

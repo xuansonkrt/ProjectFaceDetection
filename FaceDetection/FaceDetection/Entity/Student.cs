@@ -42,13 +42,41 @@ namespace FaceDetection.Entity
             this.absence = absence;
         }
 
-        public String StudentCode { get; set; }
-        public String Name { get; set; }
-        public String ClassCode { get; set; }
-        public DateTime DOB { get; set; }
-        public String Gender { get; set; }
-        public Image<Bgr, Byte> Image { get; set; }
-        public int Absence { get; set; }
+        public String StudentCode
+        {
+            get { return this.studentCode; }
+            set { this.studentCode = value; }
+        }
+        public String Name
+        {
+            get { return this.name; }
+            set { this.name = value; }
+        }
+        public String ClassCode
+        {
+            get { return this.classCode; }
+            set { this.classCode = value; }
+        }
+        public DateTime DOB
+        {
+            get { return this.DoB; }
+            set { this.DoB = value; }
+        }
+        public String Gender
+        {
+            get { return this.gender; }
+            set { this.gender = value; }
+        }
+        public Image<Bgr, Byte> Image
+        {
+            get { return this.image; }
+            set { this.image = value; }
+        }
+        public int Absence
+        {
+            get { return this.absence; }
+            set { this.absence = value; }
+        }
 
 
     }

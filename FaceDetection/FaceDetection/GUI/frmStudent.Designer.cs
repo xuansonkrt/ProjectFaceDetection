@@ -33,8 +33,8 @@
             this.btnOpenFile = new System.Windows.Forms.Button();
             this.radGirl = new System.Windows.Forms.RadioButton();
             this.radBoy = new System.Windows.Forms.RadioButton();
-            this.txtClass = new System.Windows.Forms.TextBox();
             this.txtDoB = new System.Windows.Forms.TextBox();
+            this.txtClassCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtStudentCode = new System.Windows.Forms.TextBox();
@@ -52,7 +52,7 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.imgCamera = new Emgu.CV.UI.ImageBox();
-            this.btnChup = new System.Windows.Forms.Button();
+            this.btnCapture = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
@@ -98,24 +98,24 @@
             this.radBoy.Text = "Nam";
             this.radBoy.UseVisualStyleBackColor = true;
             // 
-            // txtClass
-            // 
-            this.txtClass.Location = new System.Drawing.Point(173, 224);
-            this.txtClass.Name = "txtClass";
-            this.txtClass.Size = new System.Drawing.Size(292, 22);
-            this.txtClass.TabIndex = 13;
-            // 
             // txtDoB
             // 
-            this.txtDoB.Location = new System.Drawing.Point(173, 285);
+            this.txtDoB.Location = new System.Drawing.Point(173, 282);
             this.txtDoB.Name = "txtDoB";
-            this.txtDoB.Size = new System.Drawing.Size(136, 22);
-            this.txtDoB.TabIndex = 12;
+            this.txtDoB.Size = new System.Drawing.Size(146, 22);
+            this.txtDoB.TabIndex = 13;
+            // 
+            // txtClassCode
+            // 
+            this.txtClassCode.Location = new System.Drawing.Point(173, 227);
+            this.txtClassCode.Name = "txtClassCode";
+            this.txtClassCode.Size = new System.Drawing.Size(292, 22);
+            this.txtClassCode.TabIndex = 12;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(315, 290);
+            this.label1.Location = new System.Drawing.Point(325, 285);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 17);
             this.label1.TabIndex = 11;
@@ -148,8 +148,8 @@
             // 
             this.groupBox2.Controls.Add(this.radGirl);
             this.groupBox2.Controls.Add(this.radBoy);
-            this.groupBox2.Controls.Add(this.txtClass);
             this.groupBox2.Controls.Add(this.txtDoB);
+            this.groupBox2.Controls.Add(this.txtClassCode);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtName);
             this.groupBox2.Controls.Add(this.txtStudentCode);
@@ -279,14 +279,15 @@
             this.imgCamera.TabIndex = 17;
             this.imgCamera.TabStop = false;
             // 
-            // btnChup
+            // btnCapture
             // 
-            this.btnChup.Location = new System.Drawing.Point(583, 365);
-            this.btnChup.Name = "btnChup";
-            this.btnChup.Size = new System.Drawing.Size(130, 35);
-            this.btnChup.TabIndex = 27;
-            this.btnChup.Text = "Chụp";
-            this.btnChup.UseVisualStyleBackColor = true;
+            this.btnCapture.Location = new System.Drawing.Point(583, 365);
+            this.btnCapture.Name = "btnCapture";
+            this.btnCapture.Size = new System.Drawing.Size(130, 35);
+            this.btnCapture.TabIndex = 27;
+            this.btnCapture.Text = "Chụp";
+            this.btnCapture.UseVisualStyleBackColor = true;
+            this.btnCapture.Click += new System.EventHandler(this.btnCapture_Click);
             // 
             // btnThoat
             // 
@@ -307,7 +308,7 @@
             this.groupBox1.Controls.Add(this.cbCamIndex);
             this.groupBox1.Controls.Add(this.btnHuy);
             this.groupBox1.Controls.Add(this.imgCamera);
-            this.groupBox1.Controls.Add(this.btnChup);
+            this.groupBox1.Controls.Add(this.btnCapture);
             this.groupBox1.Controls.Add(this.btnSubmit);
             this.groupBox1.Controls.Add(this.imgTrain);
             this.groupBox1.Controls.Add(this.btnThoat);
@@ -325,6 +326,7 @@
             this.ClientSize = new System.Drawing.Size(1297, 592);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmAddStudent";
             this.Load += new System.EventHandler(this.frmStudent_Load);
             this.groupBox2.ResumeLayout(false);
@@ -342,8 +344,8 @@
         private System.Windows.Forms.Button btnOpenFile;
         public System.Windows.Forms.RadioButton radGirl;
         public System.Windows.Forms.RadioButton radBoy;
-        public System.Windows.Forms.TextBox txtClass;
         public System.Windows.Forms.TextBox txtDoB;
+        public System.Windows.Forms.TextBox txtClassCode;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txtName;
         public System.Windows.Forms.TextBox txtStudentCode;
@@ -361,7 +363,7 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnHuy;
         public Emgu.CV.UI.ImageBox imgCamera;
-        private System.Windows.Forms.Button btnChup;
+        private System.Windows.Forms.Button btnCapture;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.GroupBox groupBox1;
     }

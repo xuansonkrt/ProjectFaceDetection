@@ -11,3 +11,17 @@ E:\IT_MTA\Nam 3\NNLT2\SourceCode\FaceDetection\FaceDetection\bin\Debug\Microsoft
 E:\IT_MTA\Nam 3\NNLT2\SourceCode\FaceDetection\FaceDetection\bin\Debug\Emgu.CV.World.dll
 E:\IT_MTA\Nam 3\NNLT2\SourceCode\FaceDetection\FaceDetection\obj\Debug\FaceDetection.csproj.FaceDetection.exe.config
 E:\IT_MTA\Nam 3\NNLT2\SourceCode\FaceDetection\FaceDetection\obj\Debug\FaceDetection.GUI.frmStudent.resources
+E:\IT_MTA\Nam 3\NNLT2\SourceCode\ProjectFaceDetection\FaceDetection\FaceDetection\bin\Debug\FaceDetection.exe.config
+E:\IT_MTA\Nam 3\NNLT2\SourceCode\ProjectFaceDetection\FaceDetection\FaceDetection\obj\Debug\FaceDetection.exe
+E:\IT_MTA\Nam 3\NNLT2\SourceCode\ProjectFaceDetection\FaceDetection\FaceDetection\obj\Debug\FaceDetection.pdb
+E:\IT_MTA\Nam 3\NNLT2\SourceCode\ProjectFaceDetection\FaceDetection\FaceDetection\bin\Debug\FaceDetection.exe
+E:\IT_MTA\Nam 3\NNLT2\SourceCode\ProjectFaceDetection\FaceDetection\FaceDetection\bin\Debug\FaceDetection.pdb
+E:\IT_MTA\Nam 3\NNLT2\SourceCode\ProjectFaceDetection\FaceDetection\FaceDetection\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.dll
+E:\IT_MTA\Nam 3\NNLT2\SourceCode\ProjectFaceDetection\FaceDetection\FaceDetection\bin\Debug\Emgu.CV.World.dll
+E:\IT_MTA\Nam 3\NNLT2\SourceCode\ProjectFaceDetection\FaceDetection\FaceDetection\obj\Debug\FaceDetection.csprojResolveAssemblyReference.cache
+E:\IT_MTA\Nam 3\NNLT2\SourceCode\ProjectFaceDetection\FaceDetection\FaceDetection\obj\Debug\FaceDetection.csproj.FaceDetection.exe.config
+E:\IT_MTA\Nam 3\NNLT2\SourceCode\ProjectFaceDetection\FaceDetection\FaceDetection\obj\Debug\FaceDetection.GUI.frmMain.resources
+E:\IT_MTA\Nam 3\NNLT2\SourceCode\ProjectFaceDetection\FaceDetection\FaceDetection\obj\Debug\FaceDetection.GUI.frmStudent.resources
+E:\IT_MTA\Nam 3\NNLT2\SourceCode\ProjectFaceDetection\FaceDetection\FaceDetection\obj\Debug\FaceDetection.Properties.Resources.resources
+E:\IT_MTA\Nam 3\NNLT2\SourceCode\ProjectFaceDetection\FaceDetection\FaceDetection\obj\Debug\FaceDetection.csproj.GenerateResource.Cache
+E:\IT_MTA\Nam 3\NNLT2\SourceCode\ProjectFaceDetection\FaceDetection\FaceDetection\obj\Debug\FaceDetection.GUI.frmClass.resources

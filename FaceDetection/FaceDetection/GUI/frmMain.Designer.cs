@@ -37,13 +37,13 @@
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.thêmMớiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.thêmLớpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsAddClass = new System.Windows.Forms.ToolStripMenuItem();
             this.tsAddStudent = new System.Windows.Forms.ToolStripMenuItem();
             this.chỉnhSửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsUpdateClass = new System.Windows.Forms.ToolStripMenuItem();
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xóaLớpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsDeleteClass = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaSinhViênToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.điểmDanhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lọcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -158,19 +158,20 @@
             // thêmMớiToolStripMenuItem
             // 
             this.thêmMớiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thêmLớpToolStripMenuItem,
+            this.tsAddClass,
             this.tsAddStudent});
             this.thêmMớiToolStripMenuItem.Name = "thêmMớiToolStripMenuItem";
             this.thêmMớiToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
             this.thêmMớiToolStripMenuItem.Text = "Thêm mới";
             // 
-            // thêmLớpToolStripMenuItem
+            // tsAddClass
             // 
-            this.thêmLớpToolStripMenuItem.Name = "thêmLớpToolStripMenuItem";
-            this.thêmLớpToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            this.tsAddClass.Name = "tsAddClass";
+            this.tsAddClass.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.N)));
-            this.thêmLớpToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
-            this.thêmLớpToolStripMenuItem.Text = "Thêm lớp học ";
+            this.tsAddClass.Size = new System.Drawing.Size(272, 26);
+            this.tsAddClass.Text = "Thêm lớp học ";
+            this.tsAddClass.Click += new System.EventHandler(this.tsAddClass_Click);
             // 
             // tsAddStudent
             // 
@@ -183,17 +184,18 @@
             // chỉnhSửaToolStripMenuItem
             // 
             this.chỉnhSửaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.undoToolStripMenuItem,
+            this.tsUpdateClass,
             this.redoToolStripMenuItem});
             this.chỉnhSửaToolStripMenuItem.Name = "chỉnhSửaToolStripMenuItem";
             this.chỉnhSửaToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
             this.chỉnhSửaToolStripMenuItem.Text = "Chỉnh sửa ";
             // 
-            // undoToolStripMenuItem
+            // tsUpdateClass
             // 
-            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
-            this.undoToolStripMenuItem.Text = "Sửa lớp";
+            this.tsUpdateClass.Name = "tsUpdateClass";
+            this.tsUpdateClass.Size = new System.Drawing.Size(234, 26);
+            this.tsUpdateClass.Text = "Sửa lớp";
+            this.tsUpdateClass.Click += new System.EventHandler(this.tsUpdateClass_Click);
             // 
             // redoToolStripMenuItem
             // 
@@ -204,23 +206,24 @@
             // xóaToolStripMenuItem
             // 
             this.xóaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xóaLớpToolStripMenuItem1,
+            this.tsDeleteClass,
             this.xóaSinhViênToolStripMenuItem1});
             this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
             this.xóaToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
             this.xóaToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
             this.xóaToolStripMenuItem.Text = "Xóa ";
             // 
-            // xóaLớpToolStripMenuItem1
+            // tsDeleteClass
             // 
-            this.xóaLớpToolStripMenuItem1.Name = "xóaLớpToolStripMenuItem1";
-            this.xóaLớpToolStripMenuItem1.Size = new System.Drawing.Size(171, 26);
-            this.xóaLớpToolStripMenuItem1.Text = "Xóa lớp";
+            this.tsDeleteClass.Name = "tsDeleteClass";
+            this.tsDeleteClass.Size = new System.Drawing.Size(181, 26);
+            this.tsDeleteClass.Text = "Xóa lớp";
+            this.tsDeleteClass.Click += new System.EventHandler(this.tsDeleteClass_Click);
             // 
             // xóaSinhViênToolStripMenuItem1
             // 
             this.xóaSinhViênToolStripMenuItem1.Name = "xóaSinhViênToolStripMenuItem1";
-            this.xóaSinhViênToolStripMenuItem1.Size = new System.Drawing.Size(171, 26);
+            this.xóaSinhViênToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
             this.xóaSinhViênToolStripMenuItem1.Text = "Xóa sinh viên";
             // 
             // điểmDanhToolStripMenuItem
@@ -559,6 +562,7 @@
             this.Name = "frmMain";
             this.Text = "Điểm danh khuôn mặt";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
@@ -593,13 +597,13 @@
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem thêmMớiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem thêmLớpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsAddClass;
         private System.Windows.Forms.ToolStripMenuItem tsAddStudent;
         private System.Windows.Forms.ToolStripMenuItem chỉnhSửaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsUpdateClass;
         private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem xóaLớpToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tsDeleteClass;
         private System.Windows.Forms.ToolStripMenuItem xóaSinhViênToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem điểmDanhToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lọcToolStripMenuItem;

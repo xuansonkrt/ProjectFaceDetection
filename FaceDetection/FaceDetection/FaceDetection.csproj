@@ -85,6 +85,8 @@
     <Compile Include="Config\ConnectDB.cs" />
     <Compile Include="Constant\DataBaseConstant.cs" />
     <Compile Include="Constant\EmguCVConstant.cs" />
+    <Compile Include="Controller\ClassController.cs" />
+    <Compile Include="Controller\StudentContrller.cs" />
     <Compile Include="Entity\Class.cs" />
     <Compile Include="Entity\ClassType.cs" />
     <Compile Include="Entity\PartClass.cs" />
@@ -121,6 +123,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\frmClass.resx">
+      <DependentUpon>frmClass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,9 +154,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
